@@ -6,10 +6,11 @@ import express, {
 import cors from "cors";
 import { RegisterRoutes } from "../routes/routes";
 import swaggerUi from "swagger-ui-express";
+import { getConfig } from "./config";
 
 export function main() {
   const app = express();
-  const port = 3000;
+  const port = getConfig().PORT;
 
   app.use(
     urlencoded({
