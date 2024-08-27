@@ -6,8 +6,8 @@
   "scripts": {
     "init": "npm install && npm run start",
     "start": "npm run build && npm run start:prod",
-    "start:dev": "concurrently \"nodemon\" \"nodemon -x tsoa spec-and-routes\"",
-    "start:prod": "node ./build/root.js",
+    "start:dev": "concurrently --raw \"nodemon\" \"nodemon -x tsoa spec-and-routes\"",
+    "start:prod": "node ./build/src/root.js",
     "start:test": "jest --detectOpenHandles",
     "build": "npm run build:tsoa:routes && npm run build:tsoa:spec && tsc && tsc-alias",
     "build:tsoa": "tsoa spec-and-routes",
